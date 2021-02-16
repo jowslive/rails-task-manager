@@ -1,0 +1,25 @@
+
+<div class="row">
+  <div class="col-5">
+    <h1> <%= @task.title %> </h1>
+  </div>
+  <div class="col-2 ml-3">
+    <%= link_to "Edit this task", edit_task_path(@task), class: "btn btn-secondary" %> 
+  </div>
+</div>
+<div class="row">
+  <div class="col-6">
+    <div class="viewTaskDetails">
+      <%= @task.details %>
+    </div> 
+  </div>
+</div>
+
+<br>
+
+<%= @task.completed ? '<input type="checkbox" checked>'.html_safe : '<input type="checkbox">'.html_safe %>
+<%= @task.completed ? '<label> This task is completed! </label><br>'.html_safe : '<label> This task is not completed yet! </label><br>'.html_safe %>
+
+<hr><br>
+
+<%= link_to "Back to list", tasks_path %>
